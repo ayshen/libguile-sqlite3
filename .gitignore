@@ -1,0 +1,12 @@
+# Build output
+.libs
+*.lo
+*.la
+*.o
+*.so
+
+# Temporary files
+tmp/
+
+# Editor files
+.*.sw*
