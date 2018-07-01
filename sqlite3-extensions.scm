@@ -21,11 +21,11 @@
             (lambda (key . args) (begin
                 (sqlite3-close connection)
                 (if (not (eq? key 'sqlite3-success))
-                    (throw key . args))))
+                    (throw key args))))
             ; TODO
             ; pre-unwind-handler to capture the internal stack,
             ; because we will lose it when we rethrow.
-        ))
+        )))
 
 
 (define (range-internal n result)
@@ -65,8 +65,7 @@
         (bind-parameter
             statement
             (+ n 1)
-            (cdr parameters))
-    )))
+            (cdr parameters)))))
 
 (define (bind-parameters statement parameters)
     (bind-parameter statement 1 parameters))
