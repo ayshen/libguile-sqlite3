@@ -403,6 +403,13 @@ libguile_sqlite3_init (void * unused)
                        sqlite3_step_wrapper);
     scm_c_export("sqlite3-step");
 
+    /* sqlite3-column-count    statement
+    Get the number of columns that may be available when the
+    given prepared SQL statement is stepped.
+    Note that since the statement may or may not have any rows,
+    this column count may not be useful.
+    Returns the number of columns. Does not throw.
+    */
     scm_c_define_gsubr("sqlite3-column-count", 1, 0, 0,
                        sqlite3_column_count_wrapper);
     scm_c_export("sqlite3-column-count");
