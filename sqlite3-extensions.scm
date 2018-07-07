@@ -56,7 +56,7 @@
 (define (collect-all-rows statement)
     (let ((column-indices
         (range (sqlite3-column-count statement))))
-        (collect-row statement column-indices '())))
+        (collect-rows statement column-indices '())))
 
 (define (bind-parameter statement n parameters)
     (if (not (null? parameters))
