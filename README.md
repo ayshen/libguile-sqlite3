@@ -15,6 +15,8 @@ These packages are required in order to build this:
 - libsqlite3-dev
 - guile-2.0-dev
 
+Install this in the usual way:
+
     make
     sudo make install
 
